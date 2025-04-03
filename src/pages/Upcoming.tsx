@@ -12,7 +12,7 @@ const Upcoming: React.FC = () => {
   const { data, isLoading, isFetching } = useQuery({
     queryKey: ['upcomingAnime', page],
     queryFn: () => fetchUpcomingAnime(page),
-    keepPreviousData: true,
+    placeholderData: (previousData) => previousData,
   });
 
   const handleLoadMore = () => {

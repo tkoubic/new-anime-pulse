@@ -12,7 +12,7 @@ const Popular: React.FC = () => {
   const { data, isLoading, isFetching } = useQuery({
     queryKey: ['recentAnime', page],
     queryFn: () => fetchRecentAnime(page),
-    keepPreviousData: true,
+    placeholderData: (previousData) => previousData,
   });
 
   const handleLoadMore = () => {
