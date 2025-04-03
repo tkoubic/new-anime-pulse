@@ -56,7 +56,7 @@ const Index: React.FC = () => {
         <div className="container mx-auto">
           <div className="flex items-center justify-between mb-8">
             <h2 className="text-2xl md:text-3xl font-bold">Recent Releases</h2>
-            <Link to="/recent" className="text-anime-primary flex items-center hover:underline">
+            <Link to="/popular" className="text-anime-primary flex items-center hover:underline">
               View All <ArrowRight size={16} className="ml-1" />
             </Link>
           </div>
@@ -64,7 +64,7 @@ const Index: React.FC = () => {
           {isLoadingRecent ? (
             <LoadingSpinner />
           ) : (
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
               {recentAnimeData?.data.slice(0, 10).map(anime => (
                 <AnimeCard key={anime.mal_id} anime={anime} />
               ))}
@@ -86,7 +86,7 @@ const Index: React.FC = () => {
           {isLoadingUpcoming ? (
             <LoadingSpinner />
           ) : (
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
               {upcomingAnimeData?.data.slice(0, 8).map(anime => (
                 <AnimeCard key={anime.mal_id} anime={anime} />
               ))}
